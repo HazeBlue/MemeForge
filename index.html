@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线表情包生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>在线表情包生成器</h1>
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*" />
+            <label for="imageUpload" class="upload-btn">选择图片</label>
+            <p class="upload-info">支持 JPG、PNG、GIF 格式</p>
+        </div>
+        
+        <div class="editor-section" id="editorSection" style="display: none;">
+            <div class="canvas-container">
+                <canvas id="memeCanvas"></canvas>
+                <img id="previewImage" alt="图片预览" style="display: none;" />
+            </div>
+            
+            <div class="controls">
+                <div class="text-controls">
+                    <div class="input-group">
+                        <label for="topText">顶部文字:</label>
+                        <input type="text" id="topText" placeholder="输入顶部文字" maxlength="50" />
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="middleText">中间文字:</label>
+                        <input type="text" id="middleText" placeholder="输入中间文字" maxlength="50" />
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="bottomText">底部文字:</label>
+                        <input type="text" id="bottomText" placeholder="输入底部文字" maxlength="50" />
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="fontSize">字体大小:</label>
+                        <input type="range" id="fontSize" min="20" max="60" value="40" />
+                        <span id="fontSizeValue">40</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="fontColor">字体颜色:</label>
+                        <input type="color" id="fontColor" value="#ffffff" />
+                    </div>
+                </div>
+                
+                <button id="generateBtn" class="generate-btn">生成表情包</button>
+                <button id="downloadBtn" class="download-btn">下载表情包</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
